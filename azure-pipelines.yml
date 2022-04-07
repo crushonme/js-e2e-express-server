@@ -3,9 +3,6 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
-trigger:
-- main
-
 pool:
   vmImage: windows-latest
 
@@ -13,10 +10,6 @@ variables:
   npm_config_cache: $(Pipeline.Workspace)/.npm
 
 steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '10.x'
-  displayName: 'Install Node.js'
 
 - task: Cache@2
   inputs:
@@ -25,6 +18,10 @@ steps:
        npm | "$(Agent.OS)"
     path: $(npm_config_cache)
   displayName: Cache npm
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'
 
 - script: |
     npm install
