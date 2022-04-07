@@ -9,13 +9,14 @@ trigger:
 pool:
   vmImage: windows-latest
 
+variables:
+  npm_config_cache: $(Pipeline.Workspace)/.npm
+
 steps:
 - task: NodeTool@0
   inputs:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
-variables:
-  npm_config_cache: $(Pipeline.Workspace)/.npm
 
 - task: Cache@2
   inputs:
