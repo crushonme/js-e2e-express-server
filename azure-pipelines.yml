@@ -5,10 +5,9 @@
 
 pool:
   vmImage: windows-latest
-  System.Debug: true
 variables:
   npm_config_cache: $(Pipeline.Workspace)/.npm
-
+  System.Debug: true
 steps:
 
 - task: Cache@2
