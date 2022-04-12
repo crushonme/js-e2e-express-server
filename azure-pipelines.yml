@@ -7,7 +7,7 @@
 pool:
   name: Default
   #demands: Agent.ComputerName -equals WENCHM18VM
-  demands: Agent.ComputerName -equals ADRMS #WENCHM462VM
+  demands: Agent.ComputerName -equals ADRMSI #WENCHM462VM
 
 variables:
   npm_config_cache: $(Pipeline.Workspace)/.npm
