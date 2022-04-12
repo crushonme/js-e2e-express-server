@@ -3,15 +3,15 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
+
 pool:
-#  name:Default
-  demands:Agent.ComputerName -equals WENCHM18VM
+  name: Default
+  demands: Agent.ComputerName -equals WENCHM18VM
 
 variables:
   npm_config_cache: $(Pipeline.Workspace)/.npm
   System.Debug: true
 steps:
-
 - task: Cache@2
   inputs:
     key: 'testkey | "$(Agent.OS)" | package.json'
