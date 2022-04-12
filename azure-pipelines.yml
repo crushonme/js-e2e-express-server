@@ -5,7 +5,7 @@
 
 pool:
   name:Default
-  demand:TARGET
+  demands:TARGET
 
 variables:
   npm_config_cache: $(Pipeline.Workspace)/.npm
