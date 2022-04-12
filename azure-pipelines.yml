@@ -4,8 +4,8 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 pool:
-  name:Default
-#  demands:Agent.ComputerName -equals WENCHM18VM
+#  name:Default
+  demands:Agent.ComputerName -equals WENCHM18VM
 
 variables:
   npm_config_cache: $(Pipeline.Workspace)/.npm
